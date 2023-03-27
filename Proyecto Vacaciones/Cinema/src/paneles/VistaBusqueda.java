@@ -7,12 +7,14 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 import config.Constantes;
 import custom.ClicListener;
 import custom.Evento;
 import custom.Panel;
 import custom.Text;
+import mostrardatos.VentanaVerTarjeta;
 import objects.Cliente;
 import paneles.VistaPedirCedu.OPCIONES;
 import variablesVista.VarVistaBuscar;
@@ -31,13 +33,15 @@ public class VistaBusqueda extends Panel implements ClicListener {
 			data.setBotonBasic(new Text("Ver tarjeta Basic", Constantes.defaultFont.deriveFont(30f)));
 			data.getBotonBasic().addClicListener(this);
 			data.getBotonBasic().setOpaque(true);
-		} else data.setBotonBasic(new Text("No tiene tarjeta basic", Constantes.defaultFont.deriveFont(30f)));
+		} else
+			data.setBotonBasic(new Text("No tiene tarjeta basic", Constantes.defaultFont.deriveFont(30f)));
 
 		if (cliente.gettGold().getExisteTarjeta()) {
 			data.setBotonGold(new Text("Ver tarjeta Gold", Constantes.defaultFont.deriveFont(30f)));
 			data.getBotonGold().addClicListener(this);
 			data.getBotonGold().setOpaque(true);
-		} else data.setBotonGold(new Text("No tiene tarjeta gold", Constantes.defaultFont.deriveFont(30f)));
+		} else
+			data.setBotonGold(new Text("No tiene tarjeta gold", Constantes.defaultFont.deriveFont(30f)));
 
 		data.getBotonVolver().setOpaque(true);
 		data.getBotonVolver().addClicListener(this);
@@ -80,12 +84,16 @@ public class VistaBusqueda extends Panel implements ClicListener {
 		add(data.getBotonVolver(), BorderLayout.SOUTH);
 	}
 
-	public void botonPresionado (Evento e) {
+	public void botonPresionado(Evento e) {
 		if (e.getSource() == data.getBotonBasic()) {
-			JOptionPane.showMessageDialog(null, "Basic: " + data.getCliente().gettBasic());
+			VentanaVerTarjeta ventanaVerTarjeta = new VentanaVerTarjeta(true, data.getCliente().gettBasic());
+			ventanaVerTarjeta.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			ventanaVerTarjeta.setVisible(true);
 		}
 		if (e.getSource() == data.getBotonGold()) {
-			JOptionPane.showMessageDialog(null, "Gold: " + data.getCliente().gettGold());
+			VentanaVerTarjeta ventanaVerTarjeta = new VentanaVerTarjeta(false, data.getCliente().gettGold());
+			ventanaVerTarjeta.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			ventanaVerTarjeta.setVisible(true);
 		}
 		if (e.getSource() == data.getBotonVolver()) {
 			removeAll();
