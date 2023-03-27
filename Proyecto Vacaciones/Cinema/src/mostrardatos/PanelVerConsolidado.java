@@ -33,18 +33,23 @@ public class PanelVerConsolidado extends Panel {
 				if (compras[i].getTipo().equals("Cinema")) comprasString += compras[i] + "Ç";
 			} else if (tipo == AMBOS) comprasString += compras[i] + "Ç";
 		}
-		String[] comprasSplit = comprasString.split("Ç");
-		Compra[] result = new Compra[comprasSplit.length];
-
-		for (int i = 0; i < comprasSplit.length; i++) result[i] = Compra.parse(comprasSplit[i]);
-
-		return result;
+		if (!comprasString.isEmpty()) {
+			String[] comprasSplit = comprasString.split("Ç");
+			Compra[] result = new Compra[comprasSplit.length];
+			
+			for (int i = 0; i < comprasSplit.length; i++) result[i] = Compra.parse(comprasSplit[i]);
+			
+			return result;
+		}
+		return new Compra[0];
 	}
 
 	public PanelVerConsolidado(Compra[] c, int tipo) {
-		if (c == null) return;
+		if (c == null)
+			return;
 		Compra[] compras = new Compra[c.length];
-		for (int i = 0; i < c.length; i++) compras[i] = c[i];
+		for (int i = 0; i < c.length; i++)
+			compras[i] = c[i];
 
 		compras = eliminarComprasPorTipo(compras, tipo);
 
@@ -53,9 +58,11 @@ public class PanelVerConsolidado extends Panel {
 		Arrays.sort(compras, Compra::compararPorTipo);
 
 		String tipos = "";
-		if (tipo == AMBOS) tipos += "Tipo-";
+		if (tipo == AMBOS)
+			tipos += "Tipo-";
 		tipos += "Nombre-Producto-Fecha-Hora-Medio de Pago-";
-		if (tipo != CONFITERIA) tipos += "ID del Cine-";
+		if (tipo != CONFITERIA)
+			tipos += "ID del Cine-";
 		tipos += "Valor unitario-Cantidad-Total";
 		String arrHeader[] = tipos.split("-");
 		Font f = Constantes.defaultFont.deriveFont(20f);
@@ -100,13 +107,13 @@ public class PanelVerConsolidado extends Panel {
 			gbc.gridx++;
 			b = CustomLineBorder.SURESTE;
 			add(new TableText(compras[i].getElemento(), f, b), gbc);
-			
+
 			gbc.gridx++;
 			add(new TableText(compras[i].getMomento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), f, b), gbc);
-			
+
 			gbc.gridx++;
 			add(new TableText(compras[i].getMomento().format(DateTimeFormatter.ofPattern("HH:mm")), f, b), gbc);
-			
+
 			gbc.gridx++;
 			add(new TableText(compras[i].getMedioPago(), f, b), gbc);
 			if (tipo != CONFITERIA) {
@@ -140,7 +147,7 @@ public class PanelVerConsolidado extends Panel {
 		}
 
 		@Override
-		public void configurarTam () {
+		public void configurarTam() {
 			setSize(400, 300);
 		}
 	}
