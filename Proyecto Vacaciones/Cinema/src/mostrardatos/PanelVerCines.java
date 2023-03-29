@@ -28,7 +28,7 @@ public class PanelVerCines extends Panel {
 		
 	}
 
-	private static final class VentanaCineSeleccionado extends Plantilla {
+	public static final class VentanaCineSeleccionado extends Plantilla {
 
 		public VentanaCineSeleccionado(Cinema cine) {
 			setDefaultCloseOperation(DISPOSE_ON_CLOSE);

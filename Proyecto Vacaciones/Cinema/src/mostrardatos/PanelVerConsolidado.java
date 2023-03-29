@@ -9,8 +9,6 @@ import java.awt.GridBagLayout;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
-import javax.swing.JOptionPane;
-
 import config.Constantes;
 import config.Utilities;
 import custom.CustomLineBorder;
@@ -124,7 +122,7 @@ public class PanelVerConsolidado extends Panel {
 					Cinema cinema = Cinema.parse(compras[i].getInfoExtra());
 					opaqueTextInfoCine = new TableText(cinema.getId() + "", f, b);
 
-					opaqueTextInfoCine.configAsButton(e -> JOptionPane.showMessageDialog(null, cinema));
+					opaqueTextInfoCine.configAsButton(e -> new PanelVerCines.VentanaCineSeleccionado(cinema).setVisible(true));
 				}
 				gbc.gridx++;
 				add(opaqueTextInfoCine, gbc);
