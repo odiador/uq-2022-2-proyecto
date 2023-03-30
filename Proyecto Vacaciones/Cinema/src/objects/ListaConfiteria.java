@@ -20,6 +20,11 @@ public class ListaConfiteria {
 			lista.set(getPosCarrito(e), nueva);
 		}
 	}
+	
+	public void clear() {
+		lista.clear();
+	}
+	
 	public Confiteria get (int i) {
 		return lista.get(i);
 	}
