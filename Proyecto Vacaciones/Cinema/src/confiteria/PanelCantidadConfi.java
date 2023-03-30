@@ -7,6 +7,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 
 import custom.ClicListener;
+import custom.CustomListener;
 import custom.Evento;
 import custom.EventoTf;
 import custom.Panel;
@@ -15,18 +16,22 @@ import custom.TextfieldListener;
 import objects.Confiteria;
 import objects.ListaConfiteria;
 
-public class Pruebas extends Panel implements TextfieldListener, ClicListener {
+public class PanelCantidadConfi extends Panel implements TextfieldListener, ClicListener {
 	private SeleccionPreviaConfi panelPrevia;
 	private SeleccionCantidadConfi panelCantidad;
 	private Confiteria confi;
 	private Text bAceptar, bVolver;
 	private ListaConfiteria carrito;
 
-	public Pruebas(String tipo, double valUnitario, ListaConfiteria carrito) {
+	public PanelCantidadConfi() {
+		
+	}
+
+	public PanelCantidadConfi(String tipo, double valUnitario, ListaConfiteria carrito) {
 		setCarrito(carrito);
 		setConfi(new Confiteria(tipo, valUnitario));
 		setPanelCantidad(new SeleccionCantidadConfi(getConfi()));
-		setPanelPrevia(new SeleccionPreviaConfi(getConfi(), 0, carrito.getTotalCarrito()));
+		setPanelPrevia(new SeleccionPreviaConfi(getConfi(), 0));
 		setbAceptar(new Text("Aceptar"));
 		setbVolver(new Text("Volver"));
 
@@ -77,11 +82,17 @@ public class Pruebas extends Panel implements TextfieldListener, ClicListener {
 			}
 			getConfi().setCantidad(cantidad);
 			getCarrito().addItemCarrito(getConfi());
-			System.out.println(getCarrito());
+			for (CustomListener l : getCustomListeners())
+				l.accionRealizada();
 		}
 		removeAll();
 		setLayout(new BorderLayout());
-		add(new SelecionConfi(getCarrito()));
+		SelecionConfi selecionConfi = new SelecionConfi(getCarrito());
+		selecionConfi.addCustomListener(() -> {
+			for (CustomListener l : getCustomListeners())
+				l.accionRealizada();
+		});
+		add(selecionConfi);
 		revalidate();
 		repaint();
 	}
