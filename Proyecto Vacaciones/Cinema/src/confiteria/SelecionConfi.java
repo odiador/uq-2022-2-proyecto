@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import config.Constantes;
 import config.PanelConfiData;
 import custom.ClicListener;
+import custom.CustomListener;
 import custom.Evento;
 import custom.Panel;
 import custom.Text;
@@ -68,7 +69,12 @@ public class SelecionConfi extends Panel implements ClicListener {
 		removeAll();
 		setLayout(new BorderLayout());
 		setStatus(1);
-		add(new Pruebas(tipo, 5000, carrito));
+		PanelCantidadConfi cantidadConfi = new PanelCantidadConfi(tipo, 5000, carrito);
+		cantidadConfi.addCustomListener(() -> {
+			for (CustomListener l : getCustomListeners())
+				l.accionRealizada();
+		});
+		add(cantidadConfi);
 		revalidate();
 		repaint();
 	}
