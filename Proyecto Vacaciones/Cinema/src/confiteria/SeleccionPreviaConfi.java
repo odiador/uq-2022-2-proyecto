@@ -17,14 +17,12 @@ public class SeleccionPreviaConfi extends Panel {
 	private int cantidad;
 	private String tipo;
 	private double vUnitario;
-	private Text lblTipo, lblCantidad, lblValUnitario, lblPrecio, lblPrecioTotal;
+	private Text lblTipo, lblCantidad, lblValUnitario, lblPrecio;
 
-	private Text infoTipo, infoCantidad, infoValUnitario, infoPrecio, infoPrecioTotal;
+	private Text infoTipo, infoCantidad, infoValUnitario, infoPrecio;
 	private Confiteria c;
-	private double total;
 
-	public SeleccionPreviaConfi(Confiteria c, int cantidad, double total) {
-		setTotal(total);
+	public SeleccionPreviaConfi(Confiteria c, int cantidad) {
 		setConfiteria(c);
 		setCantidad(cantidad);
 		setTipo(c.getProducto());
@@ -36,13 +34,11 @@ public class SeleccionPreviaConfi extends Panel {
 		setLblValUnitario(new Text("Valor Unitario:", f));
 		setLblCantidad(new Text("Cantidad:", f));
 		setLblPrecio(new Text("Precio:", f));
-		setLblPrecioTotal(new Text("Total:", f));
 
 		setInfoTipo(new Text(getTipo(), f));
 		setInfoValUnitario(new Text("$" + Utilities.format("%.0f", getvUnitario()), f));
 		setInfoCantidad(new Text(getCantidad() + "", f));
 		setInfoPrecio(new Text("$" + Utilities.format("%.0f", getPrecio()), f));
-		setInfoPrecioTotal(new Text("$" + Utilities.format(getPrecio() + getTotal()), f));
 
 		getLblTipo().setOpaque(true);
 		getInfoTipo().setOpaque(true);
@@ -56,12 +52,9 @@ public class SeleccionPreviaConfi extends Panel {
 		getLblPrecio().setOpaque(true);
 		getInfoPrecio().setOpaque(true);
 
-		getLblPrecioTotal().setOpaque(true);
-		getInfoPrecioTotal().setOpaque(true);
-
 		setBackground(Color.white);
 		setBorder(BorderFactory.createLineBorder(Color.white));
-		setLayout(new GridLayout(5, 2, 1, 1));
+		setLayout(new GridLayout(4, 2, 1, 1));
 
 		add(getLblTipo());
 		add(getInfoTipo());
@@ -75,8 +68,6 @@ public class SeleccionPreviaConfi extends Panel {
 		add(getLblPrecio());
 		add(getInfoPrecio());
 
-		add(getLblPrecioTotal());
-		add(getInfoPrecioTotal());
 	}
 
 	public void actualizar (int cantidad) {
@@ -84,7 +75,6 @@ public class SeleccionPreviaConfi extends Panel {
 
 		getInfoCantidad().setText(getCantidad() + "");
 		getInfoPrecio().setText("$" + Utilities.format("%.0f", getPrecio()));
-		getInfoPrecioTotal().setText("$" + Utilities.format(getPrecio() + getTotal()));
 	}
 
 	public double getPrecio () {
@@ -123,14 +113,6 @@ public class SeleccionPreviaConfi extends Panel {
 		this.c = c;
 	}
 
-	public double getTotal () {
-		return total;
-	}
-
-	public void setTotal (double total) {
-		this.total = total;
-	}
-
 	public Text getLblTipo () {
 		return lblTipo;
 	}
@@ -161,14 +143,6 @@ public class SeleccionPreviaConfi extends Panel {
 
 	public void setLblPrecio (Text lblPrecio) {
 		this.lblPrecio = lblPrecio;
-	}
-
-	public Text getLblPrecioTotal () {
-		return lblPrecioTotal;
-	}
-
-	public void setLblPrecioTotal (Text lblPrecioTotal) {
-		this.lblPrecioTotal = lblPrecioTotal;
 	}
 
 	public Text getInfoTipo () {
@@ -202,13 +176,4 @@ public class SeleccionPreviaConfi extends Panel {
 	public void setInfoPrecio (Text infoPrecio) {
 		this.infoPrecio = infoPrecio;
 	}
-
-	public Text getInfoPrecioTotal () {
-		return infoPrecioTotal;
-	}
-
-	public void setInfoPrecioTotal (Text infoPrecioTotal) {
-		this.infoPrecioTotal = infoPrecioTotal;
-	}
-
 }
