@@ -11,7 +11,7 @@ import javax.swing.JSeparator;
 import javax.swing.border.LineBorder;
 
 import model.Herramientas;
-import model.data;
+import model.Data;
 import threads.HiloCargando;
 
 public class VentanaTransformer extends ParteSuperior {
@@ -22,7 +22,7 @@ public class VentanaTransformer extends ParteSuperior {
 	private JSeparator separadorCedu, separadorCantidad;
 	private boolean estaVac = false;
 	private Herramientas.OPCIONES opcion;
-	private data data;
+	private Data data;
 	private VentanaPrincipal ventanaPrincipal;
 
 	public void conFigurarVentana() {
@@ -32,7 +32,7 @@ public class VentanaTransformer extends ParteSuperior {
 
 	public VentanaTransformer(VentanaPrincipal ventanaPrincipal, String cadTipo, Herramientas.OPCIONES opcion) {
 		this.ventanaPrincipal = ventanaPrincipal;
-		data = new data();
+		data = new Data();
 		this.opcion = opcion;
 		setTitulo(cadTipo);
 		setDefaultNavigation(false);

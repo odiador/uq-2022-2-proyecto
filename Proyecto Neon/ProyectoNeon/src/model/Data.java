@@ -9,10 +9,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 @SuppressWarnings({ "unchecked", "serial" })
-public class data implements Serializable {
+public class Data implements Serializable {
 	public Color verde = new Color(0, 255, 0);
 	public Color azul = new Color(0, 0, 173);
 	public Color gris = new Color(100, 100, 100);
@@ -35,7 +33,7 @@ public class data implements Serializable {
 	public int anio;
 	public ArrayList<Object> infoImp;
 
-	public data() {
+	public Data() {
 		/*
 		 * La información se maneja en un ArrayList de tipo objeto que contiene todo: -
 		 * En la posición 0 está una matriz de booleans que dice si las posiciones del
@@ -179,7 +177,7 @@ public class data implements Serializable {
 	}
 
 	public ArrayList<Object> buscarCliente(String cedula) {
-		new data();
+		new Data();
 		int pos = buscarPosCliente(cedula);
 		ArrayList<Object> res = new ArrayList<Object>();
 		if (cedula.equals("1.092.851.416")) {
@@ -211,7 +209,7 @@ public class data implements Serializable {
 	 */
 	public int buscarPosCliente(String cedula) {
 		// Si no lo encuentra manda un -7
-		new data();
+		new Data();
 		int pos = -7;
 		for (int i = 0; i < cc.size() && pos == -7; i++) {
 			if (cc.get(i).equals(cedula)) {

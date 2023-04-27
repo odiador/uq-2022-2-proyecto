@@ -17,7 +17,7 @@ import javax.swing.border.LineBorder;
 
 import model.Herramientas;
 import model.Herramientas.tiposDeSilla;
-import model.data;
+import model.Data;
 import threads.HiloCargando;
 
 public class VentanaCine extends ParteSuperior {
@@ -26,7 +26,7 @@ public class VentanaCine extends ParteSuperior {
 	private JPanel[][] matrizBotones, tabs;
 	private JLabel[][] matrizLabels = new JLabel[13][16], tabLabels;
 	private JLabel lAceptar, lVolver;
-	private data data;
+	private Data data;
 	private int cant;
 	private int pI = 20, pJ = 20;
 	private ArrayList<Object> cliente;
@@ -43,7 +43,7 @@ public class VentanaCine extends ParteSuperior {
 		this.ventanaAnterior = ventanaAnterior;
 		this.cliente = cliente;
 		this.cant = cant;
-		data = new data();
+		data = new Data();
 
 		panelBotones = new JPanel();
 		panelBotones.setSize(850, 500);
