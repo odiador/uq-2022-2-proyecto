@@ -16,6 +16,10 @@ import threads.HiloCargando;
 
 public class VentanaTransformer extends ParteSuperior {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel panelTfCedu, panelAcept, panelVolver, panelTfCantidad;
 	private JLabel lblCedu, lblAcept, lblVolver, lblCantidad;
 	private JFormattedTextField tfCedu, tfCantidad;

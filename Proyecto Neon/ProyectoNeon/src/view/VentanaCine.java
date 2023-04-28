@@ -22,6 +22,10 @@ import threads.HiloCargando;
 
 public class VentanaCine extends ParteSuperior {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel panelBotones, aceptar, volver;
 	private JPanel[][] matrizBotones, tabs;
 	private JLabel[][] matrizLabels = new JLabel[13][16], tabLabels;

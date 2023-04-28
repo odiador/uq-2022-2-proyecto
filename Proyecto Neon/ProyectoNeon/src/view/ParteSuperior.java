@@ -41,6 +41,10 @@ import javax.swing.JSeparator;
  */
 public abstract class ParteSuperior extends JFrame implements MouseListener, MouseMotionListener, KeyListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public JPanel contentPane, panelSuperior;
 	private JPanel panelCuadr, panelArrastre, panelCerrar, panelMinim;
 	private JLabel stellarCinema, lblCerrar, lblMinim, lblCuadr, lblTitul;

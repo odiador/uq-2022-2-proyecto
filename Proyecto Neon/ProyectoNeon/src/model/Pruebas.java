@@ -9,12 +9,12 @@ public class Pruebas {
 		String tipo;
 		int cantidad;
 		double val;
-		Scanner s = new Scanner(System.in);
 		ListadeConfiteria x = new ListadeConfiteria();
 		String mensaje = "--------------------------------------------" + "\n0. Ver Carrito" + "\n1. Agregar elemento"
 				+ "\n2. Agregar cantidad" + "\n3. Cambiar cantidad" + "\n4. Ver precio"
 				+ "\n--------------------------------------------" + "\nEscribe una opcion: ";
 		while (true) {
+			Scanner s = new Scanner(System.in);
 			System.out.print(mensaje);
 			int cadena = s.nextInt();
 			switch (cadena) {
@@ -56,6 +56,7 @@ public class Pruebas {
 			default:
 				System.exit(0);
 			}
+			s.close();
 		}
 	}
 

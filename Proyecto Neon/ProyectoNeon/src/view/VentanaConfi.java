@@ -17,6 +17,10 @@ import threads.HiloCargando;
 
 public class VentanaConfi extends ParteSuperior {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel paneles[][], panelConfiteria, vistaPrevia, botonesClutch[], panelClutch;
 	public String titulos[][] = { { "Crispetas", "Bebidas", "Comidas Rápidas", "Comidas Rápidas", "Combos" },
 			{ "Crispeta pequeña", "Gaseosa pequeña", "Hamburguesa", "Empanada", "Combo 1" },
@@ -142,7 +146,7 @@ public class VentanaConfi extends ParteSuperior {
 				labels[i][j] = new JLabel(Herramientas.obtenerLabelCentrado(titulos[i][j], "center"));
 				labels[i][j].setHorizontalAlignment(0);
 				labels[i][j].setForeground(col);
-				labels[i][j].setFont(Herramientas.FUENTE_TITULO_DEFAULT.deriveFont(38f));
+				labels[i][j].setFont(Herramientas.FUENTE_COOLVETICA.deriveFont(38f));
 				if (i == 0) {
 					paneles[i][j].setBorder(lineax10);
 				} else {

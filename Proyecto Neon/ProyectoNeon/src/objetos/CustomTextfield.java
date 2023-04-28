@@ -14,6 +14,10 @@ import javax.swing.JSeparator;
 import model.Herramientas;
 
 public class CustomTextfield extends JComponent {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JFormattedTextField tf;
 	private JSeparator separador;
 	private Color color = Herramientas.white;
@@ -31,10 +35,10 @@ public class CustomTextfield extends JComponent {
 		add(getTf());
 		add(getSeparador());
 	}
+
 	public void addKeyListener(KeyListener l) {
 		getTf().addKeyListener(l);
 	}
-
 
 	public void setEditable(boolean b) {
 		getTf().setEditable(b);

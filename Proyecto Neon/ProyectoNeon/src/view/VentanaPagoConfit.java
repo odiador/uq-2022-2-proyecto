@@ -5,11 +5,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -24,6 +21,10 @@ import objetos.CustomTextfield;
 import objetos.ListadeConfiteria;
 
 public class VentanaPagoConfit extends ParteSuperior implements CambioComboBox {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel panelPagos, panelPrevio, previa[][];
 	private JLabel lPrevia[][], lblLLenarTipo, lblLlenarMetodo1, lblLlenarMetodo2, lblLlenarTf1, lblLlenarTf2;
 	private ListadeConfiteria listaConfiteria;

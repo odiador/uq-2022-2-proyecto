@@ -9,8 +9,12 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-@SuppressWarnings({ "unchecked", "serial" })
+@SuppressWarnings("unchecked")
 public class Data implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Color verde = new Color(0, 255, 0);
 	public Color azul = new Color(0, 0, 173);
 	public Color gris = new Color(100, 100, 100);

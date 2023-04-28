@@ -15,6 +15,10 @@ import objetos.Confiteria;
 import objetos.ListadeConfiteria;
 
 public class VentanaCantidadConfi extends ParteSuperior {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String tipo;
 	private JPanel aceptar, volver, vistaPrevia[][], panImagen;
 	private double valorUnitario;

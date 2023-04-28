@@ -11,6 +11,10 @@ import model.Herramientas;
 
 public class PopUp extends ParteSuperior {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel aceptar;
 	private JLabel label, lAceptar;
 

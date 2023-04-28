@@ -19,6 +19,10 @@ import threads.HiloCargando;
 import threads.HiloColor;
 
 public class VentanaCarrito extends ParteSuperior {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ListadeConfiteria listaConfiteria;
 	private JLabel[] lImagenes, lValUnitarios, lTipos, lSuperiores, lCantidades, lPrecios;
 	private JLabel lHeaderTotal, lTotal, lVolver;

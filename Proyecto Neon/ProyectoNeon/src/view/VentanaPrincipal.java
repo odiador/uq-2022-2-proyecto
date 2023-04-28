@@ -13,6 +13,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 public class VentanaPrincipal extends ParteSuperior {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel[] botones;
 	private JLabel[] labels;
 	private static int defaultButton = 0;

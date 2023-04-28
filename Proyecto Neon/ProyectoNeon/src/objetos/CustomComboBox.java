@@ -17,6 +17,10 @@ import model.Herramientas;
 
 public class CustomComboBox extends JPanel implements MouseListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String opt[];
 	private JLabel label;
 	private Color colCambio = Herramientas.white;
