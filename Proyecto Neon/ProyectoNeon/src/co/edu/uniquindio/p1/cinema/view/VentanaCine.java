@@ -15,7 +15,7 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.model.Data;
+import co.edu.uniquindio.p1.cinema.controller.Data;
 import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.model.Herramientas.tiposDeSilla;
 import co.edu.uniquindio.p1.cinema.threads.HiloCargando;

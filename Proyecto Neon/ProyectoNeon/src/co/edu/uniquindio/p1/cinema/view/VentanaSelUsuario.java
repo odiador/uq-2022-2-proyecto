@@ -10,7 +10,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import co.edu.uniquindio.p1.cinema.controller.ColorManagement;
-import co.edu.uniquindio.p1.cinema.model.Data;
+import co.edu.uniquindio.p1.cinema.controller.Data;
 import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
 import co.edu.uniquindio.p1.cinema.objetos.CustomTextfield;
