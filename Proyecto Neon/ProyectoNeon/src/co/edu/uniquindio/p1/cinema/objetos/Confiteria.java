@@ -1,6 +1,6 @@
 package co.edu.uniquindio.p1.cinema.objetos;
 
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class Confiteria {
 	private String tipoDeCompra;

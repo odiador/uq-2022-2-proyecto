@@ -13,8 +13,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.ListadeConfiteria;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 import co.edu.uniquindio.p1.cinema.threads.HiloCargando;
 import co.edu.uniquindio.p1.cinema.threads.HiloColor;
 

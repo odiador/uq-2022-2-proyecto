@@ -3,6 +3,7 @@ package co.edu.uniquindio.p1.cinema.model;
 import java.util.Scanner;
 
 import co.edu.uniquindio.p1.cinema.objetos.ListadeConfiteria;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class Pruebas {
 	public static void main(String[] args) {

@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.controller.Data;
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
+import co.edu.uniquindio.p1.cinema.services.Data;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 import co.edu.uniquindio.p1.cinema.threads.HiloCargando;
 
 public class VentanaTransformer extends ParteSuperior {

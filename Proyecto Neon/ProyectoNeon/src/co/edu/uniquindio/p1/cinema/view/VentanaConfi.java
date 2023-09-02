@@ -11,8 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.ListadeConfiteria;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 import co.edu.uniquindio.p1.cinema.threads.HiloCargando;
 
 public class VentanaConfi extends ParteSuperior {

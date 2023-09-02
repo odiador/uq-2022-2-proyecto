@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class PopUp extends ParteSuperior {
 

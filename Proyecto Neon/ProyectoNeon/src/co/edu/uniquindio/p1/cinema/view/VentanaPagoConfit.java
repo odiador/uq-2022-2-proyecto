@@ -13,12 +13,12 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.CambioComboBox;
 import co.edu.uniquindio.p1.cinema.objetos.Confiteria;
 import co.edu.uniquindio.p1.cinema.objetos.CustomComboBox;
 import co.edu.uniquindio.p1.cinema.objetos.CustomTextfield;
 import co.edu.uniquindio.p1.cinema.objetos.ListadeConfiteria;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class VentanaPagoConfit extends ParteSuperior implements CambioComboBox {
 	/**

@@ -1,6 +1,6 @@
 package co.edu.uniquindio.p1.cinema.view;
 
-import static co.edu.uniquindio.p1.cinema.controller.ColorManagement.rgbColor;
+import static co.edu.uniquindio.p1.cinema.services.ColorManagement.rgbColor;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public abstract class Template extends JFrame {
 	/**

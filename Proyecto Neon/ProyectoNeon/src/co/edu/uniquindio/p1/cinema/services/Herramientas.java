@@ -1,4 +1,4 @@
-package co.edu.uniquindio.p1.cinema.model;
+package co.edu.uniquindio.p1.cinema.services;
 
 import java.awt.Color;
 import java.awt.Cursor;

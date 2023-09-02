@@ -1,7 +1,7 @@
 package co.edu.uniquindio.p1.cinema.view;
 
-import co.edu.uniquindio.p1.cinema.controller.ColorManagement;
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
+import co.edu.uniquindio.p1.cinema.services.ColorManagement;
 
 public class ColorThread extends Thread {
 	private CLabel label;

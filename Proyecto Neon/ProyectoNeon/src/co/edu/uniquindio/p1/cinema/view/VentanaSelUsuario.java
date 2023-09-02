@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
-import co.edu.uniquindio.p1.cinema.controller.ColorManagement;
-import co.edu.uniquindio.p1.cinema.controller.Data;
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
 import co.edu.uniquindio.p1.cinema.objetos.CustomTextfield;
+import co.edu.uniquindio.p1.cinema.services.ColorManagement;
+import co.edu.uniquindio.p1.cinema.services.Data;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class VentanaSelUsuario extends Template {
 

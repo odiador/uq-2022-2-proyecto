@@ -1,4 +1,4 @@
-package co.edu.uniquindio.p1.cinema.controller;
+package co.edu.uniquindio.p1.cinema.services;
 
 import java.awt.Color;
 

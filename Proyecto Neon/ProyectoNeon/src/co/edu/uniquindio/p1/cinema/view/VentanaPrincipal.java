@@ -7,9 +7,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.controller.ColorManagement;
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
+import co.edu.uniquindio.p1.cinema.services.ColorManagement;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class VentanaPrincipal extends Template {
 	/**

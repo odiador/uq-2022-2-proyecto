@@ -2,9 +2,9 @@ package co.edu.uniquindio.p1.cinema.view;
 
 import java.awt.Dimension;
 
-import co.edu.uniquindio.p1.cinema.controller.ColorManagement;
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
+import co.edu.uniquindio.p1.cinema.services.ColorManagement;
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class ToolKit {
 

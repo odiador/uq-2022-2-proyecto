@@ -8,10 +8,11 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JFormattedTextField.AbstractFormatter;
+
+import co.edu.uniquindio.p1.cinema.services.Herramientas;
+
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
-
-import co.edu.uniquindio.p1.cinema.model.Herramientas;
 
 public class CustomTextfield extends JPanel {
 	/**
