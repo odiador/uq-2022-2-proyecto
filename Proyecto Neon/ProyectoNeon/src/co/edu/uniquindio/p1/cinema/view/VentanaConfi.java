@@ -208,7 +208,7 @@ public class VentanaConfi extends ParteSuperior {
 			pasaraCantidad();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-			ventanaPrincipal.actualizarColores();
+			ventanaPrincipal.updateStellarColors();
 			ventanaPrincipal.setVisible(true);
 			setVisible(false);
 		}
@@ -307,7 +307,7 @@ public class VentanaConfi extends ParteSuperior {
 			bounds.x += panelClutch.getX();
 			bounds.y += panelClutch.getY();
 			if (Herramientas.estaEnRangoDe(botonesClutch[2])) {
-				ventanaPrincipal.actualizarColores();
+				ventanaPrincipal.updateStellarColors();
 				ventanaPrincipal.setVisible(true);
 				setVisible(false);
 			}

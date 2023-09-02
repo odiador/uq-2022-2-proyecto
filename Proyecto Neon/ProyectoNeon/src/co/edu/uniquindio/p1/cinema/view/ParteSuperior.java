@@ -17,6 +17,7 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
+import co.edu.uniquindio.p1.cinema.controller.ColorManagement;
 import co.edu.uniquindio.p1.cinema.model.Herramientas;
 import co.edu.uniquindio.p1.cinema.threads.HiloColor;
 
@@ -250,52 +251,52 @@ public abstract class ParteSuperior extends JFrame implements MouseListener, Mou
 		try {
 			switch (sentidoColor) {
 			case 0:
-				if (Herramientas.colorOriginal.getGreen() != 255) {
-					Herramientas.colorOriginal = new Color(Herramientas.colorOriginal.getRed(),
-							Herramientas.colorOriginal.getGreen() + 10, Herramientas.colorOriginal.getBlue());
+				if (ColorManagement.rgbColor.getGreen() != 255) {
+					ColorManagement.rgbColor = new Color(ColorManagement.rgbColor.getRed(),
+							ColorManagement.rgbColor.getGreen() + 10, ColorManagement.rgbColor.getBlue());
 				} else
 					sentidoColor++;
 				break;
 			case 1:
-				if (Herramientas.colorOriginal.getRed() != 175) {
-					Herramientas.colorOriginal = new Color(Herramientas.colorOriginal.getRed() - 10,
-							Herramientas.colorOriginal.getGreen(), Herramientas.colorOriginal.getBlue());
+				if (ColorManagement.rgbColor.getRed() != 175) {
+					ColorManagement.rgbColor = new Color(ColorManagement.rgbColor.getRed() - 10,
+							ColorManagement.rgbColor.getGreen(), ColorManagement.rgbColor.getBlue());
 				} else
 					sentidoColor++;
 				break;
 			case 2:
-				if (Herramientas.colorOriginal.getBlue() != 255) {
-					Herramientas.colorOriginal = new Color(Herramientas.colorOriginal.getRed(),
-							Herramientas.colorOriginal.getGreen(), Herramientas.colorOriginal.getBlue() + 10);
+				if (ColorManagement.rgbColor.getBlue() != 255) {
+					ColorManagement.rgbColor = new Color(ColorManagement.rgbColor.getRed(),
+							ColorManagement.rgbColor.getGreen(), ColorManagement.rgbColor.getBlue() + 10);
 				} else
 					sentidoColor++;
 				break;
 			case 3:
-				if (Herramientas.colorOriginal.getGreen() != 175) {
-					Herramientas.colorOriginal = new Color(Herramientas.colorOriginal.getRed(),
-							Herramientas.colorOriginal.getGreen() - 10, Herramientas.colorOriginal.getBlue());
+				if (ColorManagement.rgbColor.getGreen() != 175) {
+					ColorManagement.rgbColor = new Color(ColorManagement.rgbColor.getRed(),
+							ColorManagement.rgbColor.getGreen() - 10, ColorManagement.rgbColor.getBlue());
 				} else
 					sentidoColor++;
 				break;
 			case 4:
-				if (Herramientas.colorOriginal.getRed() != 255) {
-					Herramientas.colorOriginal = new Color(Herramientas.colorOriginal.getRed() + 10,
-							Herramientas.colorOriginal.getGreen(), Herramientas.colorOriginal.getBlue());
+				if (ColorManagement.rgbColor.getRed() != 255) {
+					ColorManagement.rgbColor = new Color(ColorManagement.rgbColor.getRed() + 10,
+							ColorManagement.rgbColor.getGreen(), ColorManagement.rgbColor.getBlue());
 				} else
 					sentidoColor++;
 				break;
 			case 5:
-				if (Herramientas.colorOriginal.getBlue() != 175) {
-					Herramientas.colorOriginal = new Color(Herramientas.colorOriginal.getRed(),
-							Herramientas.colorOriginal.getGreen(), Herramientas.colorOriginal.getBlue() - 10);
+				if (ColorManagement.rgbColor.getBlue() != 175) {
+					ColorManagement.rgbColor = new Color(ColorManagement.rgbColor.getRed(),
+							ColorManagement.rgbColor.getGreen(), ColorManagement.rgbColor.getBlue() - 10);
 				} else
 					sentidoColor = 0;
 				break;
 			}
 		} catch (Exception e) {
-			Herramientas.colorOriginal = new Color(175, 255, 175);
+			ColorManagement.rgbColor = new Color(175, 255, 175);
 		}
-		jLabel.setForeground(Herramientas.colorOriginal);
+		jLabel.setForeground(ColorManagement.rgbColor);
 		jLabel.update(jLabel.getGraphics());
 
 	}
@@ -584,16 +585,16 @@ public abstract class ParteSuperior extends JFrame implements MouseListener, Mou
 	}
 
 	public void cambiarColor() {
-		col = Herramientas.colorOriginal;
-		contentPane.setBorder(new LineBorder(Herramientas.colorOriginal));
-		lblTitul.setForeground(Herramientas.colorOriginal);
+		col = ColorManagement.rgbColor;
+		contentPane.setBorder(new LineBorder(ColorManagement.rgbColor));
+		lblTitul.setForeground(ColorManagement.rgbColor);
 		panelCerrar.setBackground(Herramientas.black);
-		lblCerrar.setForeground(Herramientas.colorOriginal);
-		lblMinim.setForeground(Herramientas.colorOriginal);
-		lblCuadr.setForeground(Herramientas.colorOriginal);
-		separadorSup.setForeground(Herramientas.colorOriginal);
-		stellarCinema.setForeground(Herramientas.colorOriginal);
-		UIManager.put("ToolTip.foreground", Herramientas.colorOriginal);
+		lblCerrar.setForeground(ColorManagement.rgbColor);
+		lblMinim.setForeground(ColorManagement.rgbColor);
+		lblCuadr.setForeground(ColorManagement.rgbColor);
+		separadorSup.setForeground(ColorManagement.rgbColor);
+		stellarCinema.setForeground(ColorManagement.rgbColor);
+		UIManager.put("ToolTip.foreground", ColorManagement.rgbColor);
 	}
 
 	public void autoDestruccion() {

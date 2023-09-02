@@ -27,15 +27,13 @@ public class VentanaTransformer extends ParteSuperior {
 	private boolean estaVac = false;
 	private Herramientas.OPCIONES opcion;
 	private Data data;
-	private VentanaPrincipal ventanaPrincipal;
 
 	public void conFigurarVentana() {
 		setSize(600, 400);
 		cambiarTitulo("", Herramientas.FUENTE_TITULO_DEFAULT);
 	}
 
-	public VentanaTransformer(VentanaPrincipal ventanaPrincipal, String cadTipo, Herramientas.OPCIONES opcion) {
-		this.ventanaPrincipal = ventanaPrincipal;
+	public VentanaTransformer(String cadTipo, Herramientas.OPCIONES opcion) {
 		data = new Data();
 		this.opcion = opcion;
 		setTitulo(cadTipo);
@@ -172,8 +170,8 @@ public class VentanaTransformer extends ParteSuperior {
 		}
 		if (e.getSource() == panelVolver) {
 			if (Herramientas.estaEnRangoDe(panelVolver)) {
-				ventanaPrincipal.actualizarColores();
-				ventanaPrincipal.setVisible(true);
+				VentanaPrincipal.getInstance().setVisible(true);
+				VentanaPrincipal.getInstance().updateStellarColors();
 				setVisible(false);
 			}
 
@@ -296,13 +294,13 @@ public class VentanaTransformer extends ParteSuperior {
 				Herramientas.abrirPopUp("Advertencia", "No hay sillas disponibles");
 				break;
 			}
-			VentanaCine vCine = new VentanaCine(cliente, cantidad, ventanaPrincipal);
+			VentanaCine vCine = new VentanaCine(cliente, cantidad, VentanaPrincipal.getInstance());
 			vCine.actualizarColores();
 			vCine.setVisible(true);
 			setVisible(false);
 			break;
 		case CONFI:
-			VentanaConfi vConfi = new VentanaConfi(ventanaPrincipal);
+			VentanaConfi vConfi = new VentanaConfi(VentanaPrincipal.getInstance());
 			vConfi.actualizarColores();
 			vConfi.setVisible(true);
 			setVisible(false);
@@ -376,8 +374,8 @@ public class VentanaTransformer extends ParteSuperior {
 			accionesAceptar();
 		}
 		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-			ventanaPrincipal.actualizarColores();
-			ventanaPrincipal.setVisible(true);
+			VentanaPrincipal.getInstance().updateStellarColors();
+			VentanaPrincipal.getInstance().setVisible(true);
 			setVisible(false);
 		}
 	}

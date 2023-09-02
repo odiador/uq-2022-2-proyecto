@@ -30,6 +30,7 @@ public class VentanaCantidadConfi extends ParteSuperior {
 	private Confiteria confiteria;
 	private String mensajes[][] = { { "Vista Previa", "" }, { "Tipo", "" }, { "Valor Unitario", "" },
 			{ "Cantidad", "" }, { "Precio", "" }, { "Precio Total", "" } };
+	private JPanel contentPane;
 
 	public static void main(String[] args) {
 		new VentanaCantidadConfi(null, "Sándwich", 1000, new ListadeConfiteria()).setVisible(true);
@@ -37,13 +38,12 @@ public class VentanaCantidadConfi extends ParteSuperior {
 
 	public void conFigurarVentana() {
 		setSize(1170, 700);
-		cambiarTitulo("Cantidad", Herramientas.FUENTE_TITULO_DEFAULT);
-		setTitulo("Cantidad");
+		setTitle("Cantidad");
 	}
 
 	public VentanaCantidadConfi(VentanaConfi ventanaConfi, String tipo, double valorUnitario,
 			ListadeConfiteria listaConfiteria) {
-		setDefaultNavigation(false);
+		contentPane = new JPanel();
 		this.ventanaConfi = ventanaConfi;
 		this.tipo = tipo;
 		this.listaConfiteria = listaConfiteria;
@@ -277,4 +277,5 @@ public class VentanaCantidadConfi extends ParteSuperior {
 	@Override
 	public void cambiarMaximizado(boolean esGrande) {
 	}
+
 }

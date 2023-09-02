@@ -184,9 +184,9 @@ public class Data implements Serializable {
 		new Data();
 		int pos = buscarPosCliente(cedula);
 		ArrayList<Object> res = new ArrayList<Object>();
-		if (cedula.equals("1.092.851.416")) {
+		if (cedula.equals("1092851416")) {
 			res.add("Juan Manuel Amador");
-			res.add("1.092.851.416");
+			res.add(cedula);
 			res.add(0);
 			res.add(120);
 			res.add(false);

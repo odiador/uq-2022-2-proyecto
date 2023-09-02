@@ -37,8 +37,6 @@ public class Herramientas {
 	public static final Cursor HAND_CURSOR = new Cursor(Cursor.HAND_CURSOR);
 	public static final Cursor TEXT_CURSOR = new Cursor(Cursor.TEXT_CURSOR);
 
-	public static Color colorOriginal = new Color(175, 255, 175);
-
 	public static final Color WHITE = Color.white;
 	public static final Color white = WHITE;
 
@@ -48,10 +46,11 @@ public class Herramientas {
 	public static final Color GRAY = new Color(100, 100, 100);
 	public static final Color gray = GRAY;
 
-	public static final Font FUENTE_TITULO_DEFAULT = crearFuente("fonts/Bubble Bobble.otf", 20);
+	public static final String RUTA_FONT_DEFAULT = "fonts/Bubble Bobble.otf";
+	public static final Font FUENTE_TITULO_DEFAULT = crearFuente(RUTA_FONT_DEFAULT, 20);
+	public static final Font FUENTE_STELLAR = crearFuente("fonts/PAC-FONT.ttf", 20);
 	public static final Font FUENTE_PIRANA = crearFuente("fonts/pirana.ttf", 17);;
 	public static final Font FUENTE_COOLVETICA = crearFuente("fonts/coolvetica rg.otf", 20);
-	public static final String RUTA_FONT_DEFAULT = "fonts/Bubble Bobble.otf";
 
 	public static final ImageIcon IMAGEN_DEFAULT = new ImageIcon("images/Stellar Cinema.png");
 

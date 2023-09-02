@@ -335,7 +335,7 @@ public class VentanaCine extends ParteSuperior {
 			terminar();
 		}
 		if (code == KeyEvent.VK_ESCAPE) {
-			ventanaAnterior.actualizarColores();
+			ventanaAnterior.updateStellarColors();
 			ventanaAnterior.setVisible(true);
 			setVisible(false);
 		}
@@ -558,7 +558,7 @@ public class VentanaCine extends ParteSuperior {
 		if (e.getSource() == volver) {
 			if (Herramientas.estaEnRangoDe(volver)) {
 				ventanaAnterior.setVisible(true);
-				ventanaAnterior.actualizarColores();
+				ventanaAnterior.updateStellarColors();
 				setVisible(false);
 			}
 		}

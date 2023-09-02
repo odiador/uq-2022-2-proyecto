@@ -1,0 +1,43 @@
+package co.edu.uniquindio.p1.cinema.view;
+
+import java.awt.Dimension;
+
+import co.edu.uniquindio.p1.cinema.controller.ColorManagement;
+import co.edu.uniquindio.p1.cinema.model.Herramientas;
+import co.edu.uniquindio.p1.cinema.objetos.CLabel;
+
+public class ToolKit {
+
+	static void configureButtonHover(final CLabel label) {
+		label.setOpaque(true);
+		label.setOnMouseEnteredAction(() -> {
+			label.setBackground(ColorManagement.rgbColor);
+			label.setForeground(Herramientas.black);
+		});
+		label.setOnMouseExitedAction(() -> {
+			label.setBackground(Herramientas.black);
+			label.setForeground(ColorManagement.rgbColor);
+		});
+
+	}
+
+	static void configureButtonHover(final CLabel label, Runnable eventHover, Runnable eventUnhover) {
+		label.setOnMouseEnteredAction(eventHover);
+		label.setOnMouseExitedAction(eventUnhover);
+
+	}
+
+	static CLabel initSuperiorButton(final String text) {
+		final CLabel label = new CLabel(text);
+		label.setOpaque(true);
+		label.setHorizontalAlignment(CLabel.CENTER);
+		label.setFont(Herramientas.FUENTE_PIRANA);
+		label.setBackground(Herramientas.black);
+		label.setVerticalAlignment(CLabel.CENTER);
+		label.setForeground(ColorManagement.rgbColor);
+		label.setPreferredSize(new Dimension(60, 25));
+		label.setMinimumSize(new Dimension(60, 25));
+		return label;
+	}
+
+}

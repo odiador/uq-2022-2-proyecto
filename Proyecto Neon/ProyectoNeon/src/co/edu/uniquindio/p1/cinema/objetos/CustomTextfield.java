@@ -1,20 +1,19 @@
 package co.edu.uniquindio.p1.cinema.objetos;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.JComponent;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFormattedTextField.AbstractFormatter;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
 
 import co.edu.uniquindio.p1.cinema.model.Herramientas;
 
-import javax.swing.JSeparator;
-
-public class CustomTextfield extends JComponent {
+public class CustomTextfield extends JPanel {
 	/**
 	 * 
 	 */
@@ -24,17 +23,17 @@ public class CustomTextfield extends JComponent {
 	private Color color = Herramientas.white;
 
 	public CustomTextfield(AbstractFormatter numberFormatter) {
-		setLayout(null);
-		setTf(new JFormattedTextField(numberFormatter));
-		setSeparador(new JSeparator());
+		setLayout(new BorderLayout());
+		tf = new JFormattedTextField(numberFormatter);
+		separador = new JSeparator();
 		getTf().setBorder(null);
 		getTf().setForeground(Herramientas.white);
 		getTf().setBackground(Herramientas.black);
-		getSeparador().setForeground(Herramientas.white);
-		getSeparador().setBackground(Herramientas.black);
+		separador.setForeground(Herramientas.black);
+		separador.setBackground(Herramientas.white);
 
 		add(getTf());
-		add(getSeparador());
+		add(separador, BorderLayout.SOUTH);
 	}
 
 	public void addKeyListener(KeyListener l) {
@@ -48,36 +47,31 @@ public class CustomTextfield extends JComponent {
 	public void setEnabled(boolean b) {
 		getTf().setEnabled(b);
 		if (b) {
-			getSeparador().setForeground(color);
-		} else {
-			getSeparador().setForeground(getTf().getDisabledTextColor());
+			separador.setForeground(color);
+			return;
 		}
+		separador.setForeground(getTf().getDisabledTextColor());
+
 	}
 
 	public void setDisabledTextColor(Color c) {
 		getTf().setDisabledTextColor(c);
-
 	}
 
 	public void setFont(Font f) {
-		getTf().setFont(f);
-	}
-
-	public void setBounds(int x, int y, int width, int height) {
-		super.setBounds(x, y, width, height);
-		getTf().setBounds(0, 0, width, height - 1);
-		getSeparador().setBounds(0, height - 1, width, 1);
+		if (tf == null)
+			super.setFont(f);
+		else
+			getTf().setFont(f);
 	}
 
 	public void setForeground(Color c) {
+		if (tf == null) {
+			super.setForeground(c);
+			return;
+		}
 		getTf().setForeground(c);
-		getSeparador().setForeground(c);
-	}
-
-	public void setBounds(Rectangle b) {
-		super.setBounds(b);
-		getTf().setBounds(0, 0, b.width, b.height - 1);
-		getSeparador().setBounds(0, b.height - 1, b.width, 1);
+		separador.setForeground(c);
 	}
 
 	public void setText(String text) {
@@ -86,25 +80,10 @@ public class CustomTextfield extends JComponent {
 
 	public String getText() {
 		String total = "";
-		for (String parcial : getTf().getText().replace('.', '-').split("-"))
+		String[] split = getTf().getText().replace('.', '-').split("-");
+		for (String parcial : split)
 			total += parcial;
 		return total;
-	}
-
-	public JSeparator getSeparador() {
-		return separador;
-	}
-
-	public void setSeparador(JSeparator separador) {
-		this.separador = separador;
-	}
-
-	public JFormattedTextField getTf() {
-		return tf;
-	}
-
-	public void setTf(JFormattedTextField tf) {
-		this.tf = tf;
 	}
 
 	public void teclaPresionada(KeyEvent e) {
@@ -116,7 +95,21 @@ public class CustomTextfield extends JComponent {
 	}
 
 	public void actualizarColor(Color c) {
-		getSeparador().setForeground(c);
+		separador.setBackground(c);
 		getTf().setForeground(c);
+	}
+
+	/**
+	 * @return the tf
+	 */
+	public JFormattedTextField getTf() {
+		return tf;
+	}
+
+	/**
+	 * @param tf the tf to set
+	 */
+	public void setTf(JFormattedTextField tf) {
+		this.tf = tf;
 	}
 }
