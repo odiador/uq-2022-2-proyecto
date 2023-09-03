@@ -57,6 +57,16 @@ public class CLabel extends JLabel implements MouseListener {
 		this.runnableExited = runnable;
 	}
 
+	public void updateColors() {
+		if (getMousePosition() == null) {
+			if (runnableExited != null)
+				runnableExited.run();
+		} else {
+			if (runnableEntered != null)
+				runnableEntered.run();
+		}
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 	}

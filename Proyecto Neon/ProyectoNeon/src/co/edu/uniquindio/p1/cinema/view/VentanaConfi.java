@@ -13,7 +13,7 @@ import javax.swing.border.LineBorder;
 
 import co.edu.uniquindio.p1.cinema.objetos.ListadeConfiteria;
 import co.edu.uniquindio.p1.cinema.services.Herramientas;
-import co.edu.uniquindio.p1.cinema.threads.HiloCargando;
+import co.edu.uniquindio.p1.cinema.services.HiloCargando;
 
 public class VentanaConfi extends ParteSuperior {
 

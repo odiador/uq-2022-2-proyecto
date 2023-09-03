@@ -10,9 +10,9 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.services.Data;
+import co.edu.uniquindio.p1.cinema.controller.ModelFactoryController;
 import co.edu.uniquindio.p1.cinema.services.Herramientas;
-import co.edu.uniquindio.p1.cinema.threads.HiloCargando;
+import co.edu.uniquindio.p1.cinema.services.HiloCargando;
 
 public class VentanaTransformer extends ParteSuperior {
 
@@ -26,7 +26,7 @@ public class VentanaTransformer extends ParteSuperior {
 	private JSeparator separadorCedu, separadorCantidad;
 	private boolean estaVac = false;
 	private Herramientas.OPCIONES opcion;
-	private Data data;
+	private ModelFactoryController data;
 
 	public void conFigurarVentana() {
 		setSize(600, 400);
@@ -34,7 +34,7 @@ public class VentanaTransformer extends ParteSuperior {
 	}
 
 	public VentanaTransformer(String cadTipo, Herramientas.OPCIONES opcion) {
-		data = new Data();
+		data = new ModelFactoryController();
 		this.opcion = opcion;
 		setTitulo(cadTipo);
 		setDefaultNavigation(false);

@@ -15,10 +15,10 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 
-import co.edu.uniquindio.p1.cinema.services.Data;
+import co.edu.uniquindio.p1.cinema.controller.ModelFactoryController;
 import co.edu.uniquindio.p1.cinema.services.Herramientas;
+import co.edu.uniquindio.p1.cinema.services.HiloCargando;
 import co.edu.uniquindio.p1.cinema.services.Herramientas.tiposDeSilla;
-import co.edu.uniquindio.p1.cinema.threads.HiloCargando;
 
 public class VentanaCine extends ParteSuperior {
 
@@ -30,7 +30,7 @@ public class VentanaCine extends ParteSuperior {
 	private JPanel[][] matrizBotones, tabs;
 	private JLabel[][] matrizLabels = new JLabel[13][16], tabLabels;
 	private JLabel lAceptar, lVolver;
-	private Data data;
+	private ModelFactoryController data;
 	private int cant;
 	private int pI = 20, pJ = 20;
 	private ArrayList<Object> cliente;
@@ -47,7 +47,7 @@ public class VentanaCine extends ParteSuperior {
 		this.ventanaAnterior = ventanaAnterior;
 		this.cliente = cliente;
 		this.cant = cant;
-		data = new Data();
+		data = new ModelFactoryController();
 
 		panelBotones = new JPanel();
 		panelBotones.setSize(850, 500);

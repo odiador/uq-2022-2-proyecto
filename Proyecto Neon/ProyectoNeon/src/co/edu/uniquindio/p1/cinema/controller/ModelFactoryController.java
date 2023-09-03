@@ -1,4 +1,4 @@
-package co.edu.uniquindio.p1.cinema.services;
+package co.edu.uniquindio.p1.cinema.controller;
 
 import java.awt.Color;
 import java.io.FileInputStream;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 @SuppressWarnings("unchecked")
-public class Data implements Serializable {
+public class ModelFactoryController implements Serializable {
 	/**
 	 * 
 	 */
@@ -37,7 +37,7 @@ public class Data implements Serializable {
 	public int anio;
 	public ArrayList<Object> infoImp;
 
-	public Data() {
+	public ModelFactoryController() {
 		/*
 		 * La información se maneja en un ArrayList de tipo objeto que contiene todo: -
 		 * En la posición 0 está una matriz de booleans que dice si las posiciones del
@@ -181,7 +181,7 @@ public class Data implements Serializable {
 	}
 
 	public ArrayList<Object> buscarCliente(String cedula) {
-		new Data();
+		new ModelFactoryController();
 		int pos = buscarPosCliente(cedula);
 		ArrayList<Object> res = new ArrayList<Object>();
 		if (cedula.equals("1092851416")) {
@@ -213,7 +213,7 @@ public class Data implements Serializable {
 	 */
 	public int buscarPosCliente(String cedula) {
 		// Si no lo encuentra manda un -7
-		new Data();
+		new ModelFactoryController();
 		int pos = -7;
 		for (int i = 0; i < cc.size() && pos == -7; i++) {
 			if (cc.get(i).equals(cedula)) {

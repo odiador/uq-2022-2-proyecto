@@ -2,6 +2,8 @@ package co.edu.uniquindio.p1.cinema.view;
 
 import java.awt.Dimension;
 
+import javax.swing.BorderFactory;
+
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
 import co.edu.uniquindio.p1.cinema.services.ColorManagement;
 import co.edu.uniquindio.p1.cinema.services.Herramientas;
@@ -18,7 +20,22 @@ public class ToolKit {
 			label.setBackground(Herramientas.black);
 			label.setForeground(ColorManagement.rgbColor);
 		});
+	}
 
+	static void configureButtonHoverWithBorder(final CLabel label) {
+		label.setOpaque(true);
+		label.setBackground(Herramientas.black);
+		label.setForeground(ColorManagement.rgbColor);
+		label.setOnMouseEnteredAction(() -> {
+			label.setBorder(BorderFactory.createLineBorder(ColorManagement.rgbColor));
+			label.setBackground(ColorManagement.rgbColor);
+			label.setForeground(Herramientas.black);
+		});
+		label.setOnMouseExitedAction(() -> {
+			label.setBorder(BorderFactory.createLineBorder(ColorManagement.rgbColor));
+			label.setBackground(Herramientas.black);
+			label.setForeground(ColorManagement.rgbColor);
+		});
 	}
 
 	static void configureButtonHover(final CLabel label, Runnable eventHover, Runnable eventUnhover) {

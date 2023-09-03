@@ -1,4 +1,4 @@
-package co.edu.uniquindio.p1.cinema.threads;
+package co.edu.uniquindio.p1.cinema.services;
 
 import javax.swing.JLabel;
 

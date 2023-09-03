@@ -19,7 +19,7 @@ import javax.swing.border.LineBorder;
 
 import co.edu.uniquindio.p1.cinema.services.ColorManagement;
 import co.edu.uniquindio.p1.cinema.services.Herramientas;
-import co.edu.uniquindio.p1.cinema.threads.HiloColor;
+import co.edu.uniquindio.p1.cinema.services.HiloColor;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

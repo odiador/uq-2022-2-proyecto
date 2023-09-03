@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+import co.edu.uniquindio.p1.cinema.controller.ModelFactoryController;
 import co.edu.uniquindio.p1.cinema.objetos.CLabel;
 import co.edu.uniquindio.p1.cinema.objetos.CustomTextfield;
 import co.edu.uniquindio.p1.cinema.services.ColorManagement;
-import co.edu.uniquindio.p1.cinema.services.Data;
 import co.edu.uniquindio.p1.cinema.services.Herramientas;
 
 public class VentanaSelUsuario extends Template {
@@ -30,8 +30,8 @@ public class VentanaSelUsuario extends Template {
 		return instance;
 	}
 
-	public VentanaSelUsuario(int width, int height) {
-		super(width, height);
+	public VentanaSelUsuario() {
+		super(800, 400);
 		instance = this;
 		initComponents();
 		configComponents();
@@ -67,13 +67,11 @@ public class VentanaSelUsuario extends Template {
 		panel.setOpaque(false);
 
 		txtSeleccionaId.setForeground(ColorManagement.rgbColor);
-		panel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
+		panel.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 50));
 		btnSiguiente.setBorder(BorderFactory.createLineBorder(ColorManagement.rgbColor));
 		txtSeleccionaId.setHorizontalAlignment(0);
 		btnSiguiente.setHorizontalAlignment(0);
-		btnSiguiente.setBackground(Herramientas.black);
-		btnSiguiente.setForeground(ColorManagement.rgbColor);
-		ToolKit.configureButtonHover(btnSiguiente);
+		ToolKit.configureButtonHoverWithBorder(btnSiguiente);
 	}
 
 	private void setFonts() {
@@ -88,7 +86,7 @@ public class VentanaSelUsuario extends Template {
 			Herramientas.abrirPopUp("Informacion", "Escribe un documento de identidad");
 			return;
 		}
-		Data data = new Data();
+		ModelFactoryController data = new ModelFactoryController();
 		ArrayList<Object> cliente = data.buscarCliente(tfCliente.getText());
 		if (cliente.isEmpty()) {
 			Herramientas.abrirPopUp("Informacion", "El cliente no fue encontrado");
@@ -111,6 +109,7 @@ public class VentanaSelUsuario extends Template {
 	public void updateStellarColors() {
 		txtSeleccionaId.setForeground(ColorManagement.rgbColor);
 		tfCliente.actualizarColor(ColorManagement.rgbColor);
+		btnSiguiente.updateColors();
 	}
 
 }
